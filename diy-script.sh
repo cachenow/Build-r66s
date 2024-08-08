@@ -92,8 +92,8 @@ sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-set
 sed -i "s/hostname='.*'/hostname='SpringWRT'/g" package/base-files/files/bin/config_generate
 
 # 修复rtl8812au-ac驱动
-cp patch/050-backport-6.1.patch openwrt/package/kernel/rtl8812au-ac/patches/
-cat openwrt/package/kernel/rtl8812au-ac/patches/050-backport-6.1.patch
+cp patch/050-backport-6.1.patch package/kernel/rtl8812au-ac/patches/
+cat package/kernel/rtl8812au-ac/patches/050-backport-6.1.patch
 
 # 调整接口菜单
 sed -i '/option Interface/d'  package/network/services/dropbear/files/dropbear.config
