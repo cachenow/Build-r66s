@@ -10,6 +10,7 @@ sed -i 's/192.168.1.1/10.10.10.1/g' package/base-files/files/bin/config_generate
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # 移除要替换的包
+rm -rf feeds/packages/net/cloudflared
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
@@ -43,6 +44,8 @@ git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/
 git_sparse_clone master https://github.com/immortalwrt/luci applications/luci-app-cloudflared
 # git_sparse_clone master https://github.com/syb999/openwrt-19.07.1 package/network/services/msd_lite
 
+# 替换lede源cloudflared
+git_sparse_clone master https://github.com/immortalwrt/packages net/cloudflared
 
 # Themes
 git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
